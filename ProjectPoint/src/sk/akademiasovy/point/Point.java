@@ -69,7 +69,22 @@ public class Point {
     public double getDistanceFromPoint(Point other){
         return Math.sqrt(Math.pow((double)x-(double)other.getX(),2)+Math.pow((double)y-(double)other.getY(),2));
     }
-
+    //osová sumernosť, axial symetric, príjme osu x alebo y,
+    public void doAxialSymetric(char type){
+        if(type=='x'){
+            this.y=this.y*(-1);
+        }
+        else if (type=='y'){
+            this.x=this.x*(-1);
+        }
+        else
+            return;
+    }
+    //stredová sumernosť, point reflection
+    public void doPointReflection(){
+        this.x=this.x*(-1);
+        this.y=this.y*(-1);
+    }
 
 }
 

@@ -15,5 +15,15 @@ public class Main {
         p2.printPointInfo();
         System.out.println("Distance between p1 and p2 is : "+p1.getDistanceFromPoint(p2));
 
+        Point3d p3=new Point3d(2,2,2);
+        Point3d p4=new Point3d();
+        p4.generateRandomCoords();
+        System.out.println();
+        p3.printPointInfo();
+        System.out.println();
+        p4.printPointInfo();
+        System.out.println();
+        System.out.println("Distance between p3 and p4 is :"+ p3.getDistanceFromPoint(p4));
+
     }
 }
