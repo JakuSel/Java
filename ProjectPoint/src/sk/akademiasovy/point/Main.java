@@ -25,5 +25,39 @@ public class Main {
         System.out.println();
         System.out.println("Distance between p3 and p4 is :"+ p3.getDistanceFromPoint(p4));
 
+        //polymorf
+        Object o1=new Point();
+        Point p5=new Point3d(3,4,5);
+        //pretypujeme pint na 3d
+        System.out.println("Distance pretipovanej premennej:  "+((Point3d)p5).getDistance());
+
+        //pretypovanie
+
+
+        //dieťo nemože vytvarať objekt rodiča
+      //  Point3d p34=new Point();
+
+
+        //premenna typu rozhranie
+        Geometry g1=new Point3d(5,-9,6);
+        //pretipujem g1 a tym sme dokazali zavloať metodu v point
+        //pred premennu píšem na čo chcem pretypovať
+        ((Point3d)g1).printPointInfo();
+
+        //generovanie pola 10 pointov s random číslami
+        Point3d arrPoints[]=new Point3d[10];
+
+        for (int i=0;i<10;i++){
+            arrPoints[i]=new Point3d();
+            arrPoints[i].generateRandomCoords();
+            arrPoints[i].printPointInfo();
+            System.out.println();
+        }
+
+
+
+
+
+
     }
 }
