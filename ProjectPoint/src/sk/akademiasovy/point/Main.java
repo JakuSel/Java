@@ -55,8 +55,28 @@ public class Main {
         }
 
 
+    //vytvoríme usečku a vytvoríme suradnice
+
+        Point point5=new Point(2,5);
+        // prvy- vytvoríme a pošleme a druhy new point nema meno a trieda main s tym pracovať nemože,
+        // len trieda line, ktora to uloží do premennej b
+        Line line1=new Line(point5,new Point(10,4));
+
+        Line line2=new Line(1,3,4,6);
+
+        System.out.println("Line 1 lenght is: "+line1.getLineLenght());
+        //get middle point of line wrati point, a musime printnuť metodu
+        System.out.println("Middle of line 2 is:");
+        line2.getMiddleOfLine().printPointInfo();
 
 
+
+        Point pointA=new Point(3,3);
+        Point pointB=new Point(4,4);
+        Point pointC=new Point(5,5);
+        Triangle trojuholník1=new Triangle(pointA,pointB,pointC);
+        System.out.println("Perimeter is:"+trojuholník1.getPerimeter());
+        System.out.println("Area is:"+trojuholník1.getArea());
 
 
     }
