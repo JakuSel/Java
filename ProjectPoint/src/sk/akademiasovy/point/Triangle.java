@@ -11,12 +11,12 @@ public class Triangle implements InterfaceTriangle {
         this.c = c;
     }
 
-  /*  public Triangle (int xa, int ya, int xb, int yb, int xc, int yc){
+    public Triangle (int xa, int ya, int xb, int yb, int xc, int yc){
         this.a=new Point(xa,ya);
         this.b=new Point(xb,yb);
         this.c=new Point(xc,yc);
     }
-*/
+
     public double getSideA(){
         return b.getDistanceFromPoint(c);
     }

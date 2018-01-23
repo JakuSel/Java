@@ -1,5 +1,7 @@
 package sk.akademiasovy.point;
 
+import sk.akademiasovy.date.MyDate;
+
 public class Main {
     public static void main(String[] args) {
         //novy bod
@@ -78,10 +80,19 @@ public class Main {
         System.out.println("Perimeter is:"+trojuholník1.getPerimeter());
         System.out.println("Area is:"+trojuholník1.getArea());
 
+        //trojuholníky
+        Triangle rovnoramenny=new Triangle(3,3,4,7,5,3);
+        Triangle pravouhly=new Triangle(7,7,20,7,20,2);
+        Triangle rovnostranny=new Triangle(0,0,1,0,0,1);
 
     //implementacia interface s triedov triangle
-        System.out.println("is rovnostranny"+trojuholník1.isEquilateral());
+        System.out.println("is equilateral "+rovnostranny.isEquilateral());
+        System.out.println(rovnostranny.getSideA()+" "+rovnostranny.getSideB()+" "+rovnostranny.getSideC());
+        System.out.println("Is isosceles "+rovnoramenny.isIsosceles());
+        System.out.println("Is right angled "+pravouhly.isRightAngle());
 
-
+    //datum
+        MyDate datum=new MyDate();
+        datum.DDMMYY();
     }
 }
