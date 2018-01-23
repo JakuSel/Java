@@ -79,5 +79,9 @@ public class Main {
         System.out.println("Area is:"+trojuholník1.getArea());
 
 
+    //implementacia interface s triedov triangle
+        System.out.println("is rovnostranny"+trojuholník1.isEquilateral());
+
+
     }
 }
