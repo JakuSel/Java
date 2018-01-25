@@ -102,6 +102,10 @@ public class Main {
         MyClass name=new MyClass();
         System.out.println(name.formatName("jANKO"));
 
+    //mail validation
+        MyClass mail=new MyClass();
+        System.out.println(mail.isEmailValid("jak@mail.cc"));
+
 
     }
 }
