@@ -10,8 +10,10 @@ public class MyDate {
     }
 
     public void DDMMYY(){
+        //datovy typ, premenna s nazvom, novy objekt Date
         Date date=new Date();
-        SimpleDateFormat datum=new SimpleDateFormat("dd-MM-yy HH:mm:ss");
+
+        SimpleDateFormat datum=new SimpleDateFormat("dd-MM-yy HH:mm:ss EEEE");
         System.out.println(datum.format(date));
 
     }

@@ -1,6 +1,7 @@
 package sk.akademiasovy.point;
 
 import sk.akademiasovy.date.MyDate;
+import sk.akademiasovy.other.MyClass;
 
 public class Main {
     public static void main(String[] args) {
@@ -92,7 +93,15 @@ public class Main {
         System.out.println("Is right angled "+pravouhly.isRightAngle());
 
     //datum
-        MyDate datum=new MyDate();
-        datum.DDMMYY();
+        //novy objekt typu class MyDate
+        MyDate today=new MyDate();
+        today.DDMMYY();
+
+
+    //string, v mene prve písmeno velke, zvyšne male
+        MyClass name=new MyClass();
+        System.out.println(name.formatName("jANKO"));
+
+
     }
 }
