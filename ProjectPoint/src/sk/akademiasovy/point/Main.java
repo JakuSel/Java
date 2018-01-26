@@ -104,8 +104,10 @@ public class Main {
 
     //mail validation
         MyClass mail=new MyClass();
-        System.out.println(mail.isEmailValid("jak@mail.cc"));
-
+        System.out.println(mail.isEmailValid("jk!@mail.cc"));
+    //rodne číslo
+        MyClass rdnCsl=new MyClass();
+        System.out.println(rdnCsl.getGender("930830/8955"));
 
     }
 }

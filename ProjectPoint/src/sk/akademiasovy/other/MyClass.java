@@ -29,7 +29,45 @@ public class MyClass {
         else{
             return false;
         }
-
     }
+//Rodne číslo school
+    /*
+    public Gender getGender(String nim){
+        char z=nim.charAt(2);
+     if (nim.charAt(6)=='/' && nim.length()!=11 )
+         return Gender.ERROR;
+     else if (nim.charAt(6)!='/' && nim.length()!=10)
+         return Gender.ERROR;
+     else {
+         if (z == 0 || z == 1)
+             return Gender.MALE;
+         else if (z == 5 || z == 6)
+             return Gender.FEMALE;
+         else
+             return Gender.ERROR;
+     }
+    }
+*/
+    public Gender getGenderReg(String nim){
+        Pattern p=Pattern.compile("[\\d]{6,}+\\/[\\d]{4,}");
+        Matcher m=p.matcher(nim);
+
+        if (m.find()){
+            char z=nim.charAt(2);
+            if (z == 0 || z == 1)
+                return Gender.MALE;
+            else if (z == 5 || z == 6)
+                return Gender.FEMALE;
+            else
+                return Gender.ERROR;
+        }
+
+        
+        else{
+            return Gender.ERROR;
+        }
+    }
+
+
 
 }
