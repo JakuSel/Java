@@ -54,15 +54,16 @@ public class MyClass {
 
         if (m.find()){
             char z=nim.charAt(2);
-            if (z == 0 || z == 1)
+
+            if (z == '0' || z == '1')
                 return Gender.MALE;
-            else if (z == 5 || z == 6)
+            else if (z == '5' || z == '6')
                 return Gender.FEMALE;
             else
                 return Gender.ERROR;
         }
 
-        
+
         else{
             return Gender.ERROR;
         }

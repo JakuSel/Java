@@ -1,5 +1,8 @@
 package sk.akademiasovy.point;
 
+import sk.akademiasovy.abstrakt.Person;
+import sk.akademiasovy.abstrakt.Student;
+import sk.akademiasovy.abstrakt.Teacher;
 import sk.akademiasovy.date.MyDate;
 import sk.akademiasovy.other.MyClass;
 
@@ -107,7 +110,36 @@ public class Main {
         System.out.println(mail.isEmailValid("jk!@mail.cc"));
     //rodne číslo
         MyClass rdnCsl=new MyClass();
-        System.out.println(rdnCsl.getGender("930830/8955"));
+        System.out.println(rdnCsl.getGenderReg( "930830/8955"));
+
+
+
+
+    //abstrakt, nemožemo použiť, možele override
+
+        Person p= new Person() {
+            @Override
+            public void info() {
+
+            }
+        };
+
+    Person t=new Teacher();
+    t.info();
+
+    //novy objekt typu teacher, objektu person
+    Person tp=new Teacher();
+    ((Teacher)tp).setSalary(2200);
+        System.out.println(((Teacher) tp).getSalary());
+
+    Person pp=new Student();
+    if (pp instanceof Teacher){
+        ((Teacher)pp).setSalary(2200);
+    }
+
+   //  System.out.println(((Teacher)pp).getSalary());
+
+    pp.info();
 
     }
 }
