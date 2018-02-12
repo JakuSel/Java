@@ -9,6 +9,7 @@ import sk.akademiasovy.other.MyClass;
 public class Main {
     public static void main(String[] args) {
         //novy bod
+        /*
         Point p1=new Point(2,2);
         System.out.println("Point p1 is in "+p1.getQuadrant()+" quadrant");
 
@@ -94,7 +95,7 @@ public class Main {
         System.out.println(rovnostranny.getSideA()+" "+rovnostranny.getSideB()+" "+rovnostranny.getSideC());
         System.out.println("Is isosceles "+rovnoramenny.isIsosceles());
         System.out.println("Is right angled "+pravouhly.isRightAngle());
-
+*/
     //datum
         //novy objekt typu class MyDate
         MyDate today=new MyDate();
@@ -107,13 +108,14 @@ public class Main {
 
     //mail validation
         MyClass mail=new MyClass();
-        System.out.println(mail.isEmailValid("jk!@mail.cc"));
+        System.out.println(mail.isEmailValid("jk@mail.cc"));
     //rodne číslo
         MyClass rdnCsl=new MyClass();
-        System.out.println(rdnCsl.getGenderReg( "930830/8955"));
+    //    System.out.println(rdnCsl.getGenderReg( "930830/8955"));
+        MyClass ip= new MyClass();
+        System.out.println("Ip validation: "+ ip.isIpValid("092.168.25.255"));
 
-
-
+/*
 
     //abstrakt, nemožemo použiť, možele override
 
@@ -140,6 +142,6 @@ public class Main {
    //  System.out.println(((Teacher)pp).getSalary());
 
     pp.info();
-
+*/
     }
 }

@@ -19,7 +19,7 @@ public class MyClass {
         }
 //regulerny výraz
        //vytvoríme inštanciu pattern a pridame mu regulerny vyraz
-        Pattern p=Pattern.compile("[\\w\\d\\s]{3,}+@{1,1}?[a-zA-Z0-9.-]+\\.[\\w]{2,4}");
+        Pattern p=Pattern.compile("[\\w\\d\\s]{2,}@{1,1}[a-zA-Z0-9.-]{2,}\\.[\\w]{2,3}");
         //vytvoríme matcher, ktory zavola matcher, ktory je objektu pattern a pridame vyraz
         Matcher m=p.matcher(mail);
 
@@ -29,6 +29,19 @@ public class MyClass {
         else{
             return false;
         }
+    }
+
+    public boolean isIpValid(String ip){
+        Pattern p=Pattern.compile("(([1-9]|[1-9][1-9]|1[\\d]{2}|2[0-4][\\d]|25[0-5])\\.){3}([\\d]|[1-9][1-9]|1[\\d]{2}|2[0-4][\\d]|25[0-5])");
+        Matcher m=p.matcher(ip);
+
+        if (m.find()){
+            return true;
+        }
+        else{
+            return false;
+        }
+
     }
 //Rodne číslo school
     /*
@@ -48,6 +61,7 @@ public class MyClass {
      }
     }
 */
+    /*
     public Gender getGenderReg(String nim){
         Pattern p=Pattern.compile("[\\d]{6,}+\\/[\\d]{4,}");
         Matcher m=p.matcher(nim);
@@ -68,7 +82,7 @@ public class MyClass {
             return Gender.ERROR;
         }
     }
-
+*/
 
 
 }
