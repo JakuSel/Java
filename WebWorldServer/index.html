@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+<title>Web Api Request</title>
+<meta charset="utf-8">	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+   
+    <div class="row">
+        <div class="col-md-3">  </div>
+            
+        <div class="col-md-6" id="form">
+  
+            <div id="title_header">WorldServer</div>
+              
+            <select name="" id="world">
+               
+            </select>
+              
+            <select name="" id="city"> 
+              
+            </select>
+               
+            
+        </div>
+            
+            <div class="col-md-3"> </div>
+         
+    </div>
+</div>
+
+
+
+<script>
+//function startGen(){
+
+$(window).on('load',function () {    
+    
+    $.ajax({
+            
+    type:'GET',       
+    url:'http://localhost:8080/world/country',
+    data: {},   
+    success: funkc,
+    crossDomain:true,
+    dataType:'jsonp',
+    jsonCallback:'funkc',
+    contntType: 'application/json',
+    error:function(){
+    console.log('Err!');                     
+         }
+        });
+    
+    });
+                 
+    function funkc(data){
+    console.log(data);
+    data.name.forEach(function(element) {
+    $('#world').append( '<option value="'+element+'">'+element+'</option>' );
+          });
+    }
+    
+$('#world').on('change',function(){
+   $.ajax({
+            
+    type:'GET',       
+    url:'http://localhost:8080/world/city/'+$(this).val(),
+    data: {},   
+    success: showCities,
+    crossDomain:true,
+    dataType:'jsonp',
+    jsonCallback:'showCities',
+    contntType: 'application/json',
+    error:function(){
+    console.log('Err!');                     
+         }
+    });
+    
+}); 
+    
+    function showCities(data){
+    console.log(data);
+        $('#city').empty();
+    data.name.forEach(function(element) {
+    $('#city').append( '<option value="'+element+'">'+element+'</option>' );
+          });       
+    }
+  
+    
+        
+</script>
+
+</body>
+</html>

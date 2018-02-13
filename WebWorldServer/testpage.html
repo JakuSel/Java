@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+
+      </script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>SERVERTEST</title>
+  </head>
+  <body>
+
+    <div id="content">
+      <button type="button" name="button" onclick="run()">TRY</button>
+      <br>
+      Countries: <select class="" name="" id="selectL">
+
+      </select>
+    </div>
+
+    <script type="text/javascript">
+
+    function run(){
+      var urllink= 'http://localhost:8080/world/country';
+      $.ajax({
+          url: urllink,
+          data: {},
+          error: function(data){console.log("NIE");},
+          success: funkc,
+          crossDomain: true,
+          dataType: 'jsonp',
+          jsonpCallback: 'funkc',
+            contentType: 'application/json',
+            type: "GET"
+  		});
+		}
+    function funkc(data) {
+      console.log(data.name);
+      data.name.forEach(function(element) {
+        $('#selectL').append( '<option value="'+element+'">'+element+'</option>' );
+      });
+    }
+    </script>
+
+  </body>
+</html>
